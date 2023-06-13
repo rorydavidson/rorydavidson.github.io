@@ -5,7 +5,7 @@ theme: "PaperMod"
 
 params:
   homeInfoParams:
-    Title: Home
+    Title: Another Something Else
     Content: This is just a place where I put somethings. Some useful, some a lot less so.
 
   socialIcons: # optional
