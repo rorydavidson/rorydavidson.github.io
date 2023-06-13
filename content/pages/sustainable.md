@@ -5,7 +5,7 @@ categories:
 date: 2023-06-08
 lastMod: 2023-06-13
 ---
-Look here. When faced with a limited budget, a sustainability strategy for technical teams may involve a number of different approaches, depending on the specific circumstances and priorities of the team. Some potential strategies that a technical team might consider in this situation include the following:
+When faced with a limited budget, a sustainability strategy for technical teams may involve a number of different approaches, depending on the specific circumstances and priorities of the team. Some potential strategies that a technical team might consider in this situation include the following:
 
 Prioritize and focus on the most important and critical projects and activities. This may involve identifying the projects and activities that will have the greatest impact on the team's goals and objectives, and prioritizing these over other lower-priority work.
 
@@ -21,4 +21,3 @@ Overall, a sustainable strategy for technical teams facing a limited budget will
 
 
 
-See https://docs.google.com/presentation/d/13jINgcCtwq9-1KZJMVXFJG5KxreP5kx5xWH3plY92Vk
