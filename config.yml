@@ -27,12 +27,12 @@ params:
   mobileMenu: true
 
  #Google Analytics 4 optional
-  env: #production
-  GoogleAnalytics: "G-00000XXXXX" 
-  sitemap:
-    changefreq: daily
-    filename: sitemap.xml
-    priority: 0.5
+  #env: #production
+  #GoogleAnalytics: "G-00000XXXXX" 
+  # changefreq: daily
+  #sitemap:
+  #  filename: sitemap.xml
+  #  priority: 0.5
 
 outputs:
   home:
