@@ -49,7 +49,7 @@ body {
 .title {
     font-size: 2.5rem;
     font-weight: 600;
-    color: #1e40af;
+    color: #00a9e0;
     letter-spacing: -0.025em;
 }
 
@@ -65,13 +65,13 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     margin-bottom: 3rem;
-    border-left: 4px solid #3b82f6;
+    border-left: 4px solid #12506B;
 }
 
 .migration-notice h2 {
     font-size: 1.875rem;
     font-weight: 600;
-    color: #1e40af;
+    color: #00a9e0;
     margin-bottom: 1rem;
 }
 
@@ -110,7 +110,7 @@ body {
 .search-box h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #1e40af;
+    color: #00a9e0;
     margin-bottom: 0.5rem;
 }
 
@@ -151,7 +151,7 @@ body {
     justify-content: center;
     gap: 0.5rem;
     padding: 0.875rem 1.5rem;
-    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #00a9e0 100%);
     color: white;
     border: none;
     border-radius: 8px;
@@ -183,7 +183,7 @@ body {
 .additional-links h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #1e40af;
+    color: #00a9e0;
     margin-bottom: 1.5rem;
     text-align: center;
 }
@@ -207,14 +207,14 @@ body {
 
 .quick-link:hover {
     background: #f1f5f9;
-    border-color: #3b82f6;
+    border-color: #00a9e0;
     transform: translateY(-1px);
 }
 
 .quick-link h4 {
     font-size: 1.125rem;
     font-weight: 600;
-    color: #1e40af;
+    color: #00a9e0;
     margin-bottom: 0.5rem;
 }
 
