@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setButtonLoadingState(submitButton, true);
         
         // Construct the search URL
-        const searchUrl = baseUrl + encodeSearchQuery(query);
+        const searchUrl = baseUrl + encodeSearchQuery(query) + (baseUrl.includes('docs.snomed.org') ? '&global=true' : '');
         
         // Add a small delay to show the loading state, then redirect
         setTimeout(() => {
