@@ -6,10 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const docsSearchInput = document.getElementById('docs-search-input');
     const confluenceSearchForm = document.getElementById('confluence-search-form');
     const confluenceSearchInput = document.getElementById('confluence-search-input');
+    const forumsSearchForm = document.getElementById('forums-search-form');
+    const forumsSearchInput = document.getElementById('forums-search-input');
 
     // Base URLs for the search services
     const DOCS_SEARCH_BASE_URL = 'https://docs.snomed.org/?q=';
     const CONFLUENCE_SEARCH_BASE_URL = 'https://snomed.atlassian.net/wiki/search?text=';
+    const FORUMS_SEARCH_BASE_URL = 'https://forums.snomed.org/search?q=';
 
     /**
      * Encode search query for URL parameters
@@ -38,12 +41,24 @@ document.addEventListener('DOMContentLoaded', function() {
             button.disabled = false;
             // Reset to original content - this will be called if there's an error
             const isDocsButton = button.closest('#docs-search-form');
+            const isForumsButton = button.closest('#forums-search-form');
+            const isConfluenceButton = button.closest('#confluence-search-form');
+            
+            let buttonText = 'Search';
+            if (isDocsButton) {
+                buttonText = 'Search SNOMED CT Documentation';
+            } else if (isForumsButton) {
+                buttonText = 'Search SNOMED Forums';
+            } else if (isConfluenceButton) {
+                buttonText = 'Search SNOMED Spaces';
+            }
+            
             button.innerHTML = `
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8"></circle>
                     <path d="21 21l-4.35-4.35"></path>
                 </svg>
-                ${isDocsButton ? 'Search Documentation' : 'Search Confluence'}
+                ${buttonText}
             `;
         }
     }
@@ -121,6 +136,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    if (forumsSearchForm && forumsSearchInput) {
+        forumsSearchForm.addEventListener('submit', function(event) {
+            handleSearchSubmit(event, FORUMS_SEARCH_BASE_URL, forumsSearchInput);
+        });
+
+        // Add Enter key support for better UX
+        forumsSearchInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                forumsSearchForm.dispatchEvent(new Event('submit'));
+            }
+        });
+    }
+
     // Add CSS animation for the loading spinner
     const style = document.createElement('style');
     style.textContent = `
@@ -157,7 +186,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const originalHandleSearchSubmit = handleSearchSubmit;
     handleSearchSubmit = function(event, baseUrl, input) {
         const query = input.value.trim();
-        const searchType = baseUrl.includes('docs.snomed.org') ? 'documentation' : 'confluence';
+        let searchType = 'confluence';
+        if (baseUrl.includes('docs.snomed.org')) {
+            searchType = 'documentation';
+        } else if (baseUrl.includes('forums.snomed.org')) {
+            searchType = 'forums';
+        }
         
         if (query) {
             trackSearchEvent(searchType, query);
@@ -172,5 +206,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     if (!confluenceSearchForm) {
         console.warn('Confluence search form not found');
+    }
+    if (!forumsSearchForm) {
+        console.warn('Forums search form not found');
     }
 });
